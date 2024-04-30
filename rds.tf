@@ -19,7 +19,7 @@ resource "aws_default_subnet" "subnet_az2" {
 
 
 resource "aws_security_group" "allow_postgres" {
-  name        = "allow_postgres"
+  name = "allow_postgres"
 
   ingress {
     from_port   = 5432
@@ -29,14 +29,14 @@ resource "aws_security_group" "allow_postgres" {
   }
 
   tags = {
-    Name = "allow_postgres"
-    owner = "adrian.hawkins@bbd.co.za"
+    Name          = "allow_postgres"
+    owner         = "adrian.hawkins@bbd.co.za"
     created-using = "terraform"
   }
 }
 
-resource "aws_db_instance" "SpiderWeb" {
-  identifier             = "SpiderWeb"
+resource "aws_db_instance" "spiderweb" {
+  identifier             = "spiderweb"
   engine                 = "postgres"
   instance_class         = "db.t3.micro"
   allocated_storage      = 20
